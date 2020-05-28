@@ -3,8 +3,9 @@
     background-color: navajowhite;
 }
 
-.header img{
-    margin: 4px;
+.header img {
+    margin-left: 20px;
+    margin-top: 5px;
     width: 40px;
     border-radius: 50px;
 }
