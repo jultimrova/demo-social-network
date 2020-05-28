@@ -4,5 +4,7 @@
 }
 
 .header img{
+    margin: 4px;
     width: 40px;
+    border-radius: 50px;
 }
