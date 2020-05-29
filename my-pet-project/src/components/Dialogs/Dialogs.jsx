@@ -12,7 +12,7 @@ const Dialogs = (props) => {
         .map(message => <Message message={message.message}/>);
 
     return (
-        <div className={s.dialogs}>
+        <div className={s.dialogsContainer}>
             <div className={s.dialogsItem}>
                 <div>
                     {dialogsElements}
@@ -21,6 +21,11 @@ const Dialogs = (props) => {
 
             <div className={s.messages}>
                 {messageElements}
+                <textarea>Enter message</textarea>
+                <div>
+                    <button>Add message</button>
+                    <button>Remove</button>
+                </div>
             </div>
         </div>
     )
