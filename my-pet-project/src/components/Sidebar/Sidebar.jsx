@@ -23,6 +23,22 @@ const Sidebar = () => {
             <div className={s.item}>
                 <NavLink to='/settings' activeClassName={s.active}>Settings</NavLink>
             </div>
+
+            <div className={s.friends}>
+                <h2>Friends</h2>
+                <span className={s.item}>
+                    <NavLink to='/dialogs/1'>NiKo</NavLink>
+                </span>
+                <span className={s.item}>
+                    <NavLink to='/dialogs/2'>Dasha</NavLink>
+                </span>
+                <span className={s.item}>
+                    <NavLink to='/dialogs/3'>Julia</NavLink>
+                </span>
+                <span className={s.item}>
+                    <NavLink to='/dialogs/4'>Mark</NavLink>
+                </span>
+            </div>
         </div>
     )
 }

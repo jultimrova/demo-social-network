@@ -19,3 +19,12 @@
     font-weight: bold;
 }
 
+.friends h2 {
+    margin: 20px 5px;
+    font-weight: normal;
+}
+
+.friends .item a {
+    font-size: 14px;
+}
+
