@@ -24,13 +24,15 @@ export const dialogsReducer = (state = initialState, action) => {
             let newMessage = state.newMessageText;
             state.messages.push({id: 5, message: newMessage});
             state.newMessageText = '';
-            break;
+            return state;
         case UPDATE_NEW_MESSAGE_TEXT:
             state.newMessageText = action.newText;
-            break;
+            return state;
+        default:
+            return state;
     }
 
-    return state;
+
 }
 
 export const sendMessageCreator = () => ({type: SEND_MESSAGE});
