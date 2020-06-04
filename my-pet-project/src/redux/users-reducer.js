@@ -53,12 +53,12 @@ export const usersReducer = (state = initialState, action) => {
     }
 }
 
-export const subAC = (userID) => ({type: SUBSCRIBE, userID});
-export const unsubAC = (userID) => ({type: UNSUBSCRIBE, userID});
-export const setUsersAC = (users) => ({type: SET_USERS, users});
-export const setCurrentPageAC = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
-export const setUsersCountAC = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount});
-export const toggleIsFetchingAC = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
+export const subscribe = (userID) => ({type: SUBSCRIBE, userID});
+export const unsubscribe = (userID) => ({type: UNSUBSCRIBE, userID});
+export const setUsers = (users) => ({type: SET_USERS, users});
+export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
+export const setUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount});
+export const toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 
 
 export default usersReducer;
