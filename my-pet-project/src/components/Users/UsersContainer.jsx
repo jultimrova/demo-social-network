@@ -10,7 +10,7 @@ import {
 } from '../../redux/users-reducer';
 import * as axios from 'axios';
 import Users from './Users';
-import Preloader from "../../common/Preloader/Preloader";
+import Preloader from '../../common/Preloader/Preloader';
 
 class UsersContainer extends React.Component {
     componentDidMount() {

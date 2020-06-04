@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './Users.module.css';
-import users from './../../assets/images/users.jpg'
+import usersPhoto from '../../assets/images/usersPhoto.jpg'
+import {NavLink} from 'react-router-dom';
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -15,23 +16,27 @@ const Users = (props) => {
             <div className={s.paginator}>
                 {pages.map(page => {
                     return <span className={props.currentPage === page && s.selectedPage}
-                                 onClick={() => {props.onPageChanged(page)}}>{page}</span>
+                                 onClick={() => {
+                                     props.onPageChanged(page)
+                                 }}>{page}</span>
                 })}
 
             </div>
-            {props.users.map(u => <div key={u.id}>
+            {props.users.map(user => <div key={user.id}>
                 <span>
                     <div>
-                        <img className={s.usersPhoto} src={u.photos.small != null ? u.photos.small : users}
+                        <NavLink to={'/profile/' + user.id}>
+                        <img className={s.usersPhoto} src={user.photos.small != null ? user.photos.small : usersPhoto}
                              alt='userPhoto'/>
+                        </NavLink>
                     </div>
                     <div>
-                        {u.subscribe
+                        {user.subscribe
                             ? <button onClick={() => {
-                                props.unsubscribe(u.id)
+                                props.unsubscribe(user.id)
                             }}>UnSubscribe</button>
                             : <button onClick={() => {
-                                props.subscribe(u.id)
+                                props.subscribe(user.id)
                             }}>Subscribe</button>
                         }
 
@@ -39,13 +44,13 @@ const Users = (props) => {
                 </span>
                 <span>
                     <span>
-                        <div>{u.name}</div>
-                        <div>{u.status}</div>
-                        <div>{u.id}</div>
+                        <div>{user.name}</div>
+                        <div>{user.status}</div>
+                        <div>{user.id}</div>
                     </span>
                     <span>
-                        <div>{'u.location.country'}</div>
-                        <div>{'u.location.city'}</div>
+                        <div>{'user.location.country'}</div>
+                        <div>{'user.location.city'}</div>
                     </span>
                 </span>
             </div>)}

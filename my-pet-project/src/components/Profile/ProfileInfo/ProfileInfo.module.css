@@ -1,8 +1,25 @@
-.descriptionContainer {
-    padding: 5px;
+.profileInfoContainer {
+    margin: 5px 10px;
 }
 
 .profileImg img {
     width: 100%;
     height: 200px;
+    border-radius: 5px;
+}
+
+.descriptionContainer {
+    margin: 10px 0;
+}
+
+.profileUsersImg img {
+    border-radius: 10px;
+}
+
+.userProfileDescription div {
+    padding: 5px;
+}
+
+.userContacts {
+    padding: 5px;
 }
