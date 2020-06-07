@@ -2,6 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 import usersPhoto from '../../assets/images/usersPhoto.jpg'
 import {NavLink} from 'react-router-dom';
+import * as axios from 'axios';
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -33,10 +34,32 @@ const Users = (props) => {
                     <div>
                         {user.subscribe
                             ? <button onClick={() => {
-                                props.unsubscribe(user.id)
-                            }}>UnSubscribe</button>
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
+                                    withCredentials: true,
+                                    headers: {
+                                        'API-KEY': '2f622bb4-7235-4fc9-b85b-75b00ff9e5b9'
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.unsubscribe(user.id);
+                                        }
+                                    });
+
+                            }}>Unsubscribe</button>
                             : <button onClick={() => {
-                                props.subscribe(user.id)
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
+                                    withCredentials: true,
+                                    headers: {
+                                        'API-KEY': '2f622bb4-7235-4fc9-b85b-75b00ff9e5b9'
+                                    }
+                                })
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.subscribe(user.id);
+                                        }
+                                    });
+
                             }}>Subscribe</button>
                         }
 

@@ -19,7 +19,7 @@ export const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.userID) {
+                    if (u.id === action.userId) {
                         return {...u, subscribe: true}
                     }
                     return u;
@@ -29,7 +29,7 @@ export const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if (u.id === action.userID) {
+                    if (u.id === action.userId) {
                         return {...u, subscribe: false}
                     }
                     return u;
@@ -53,8 +53,8 @@ export const usersReducer = (state = initialState, action) => {
     }
 }
 
-export const subscribe = (userID) => ({type: SUBSCRIBE, userID});
-export const unsubscribe = (userID) => ({type: UNSUBSCRIBE, userID});
+export const subscribe = (userId) => ({type: SUBSCRIBE, userId});
+export const unsubscribe = (userId) => ({type: UNSUBSCRIBE, userId});
 export const setUsers = (users) => ({type: SET_USERS, users});
 export const setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage});
 export const setUsersCount = (totalUsersCount) => ({type: SET_TOTAL_USERS_COUNT, totalUsersCount});
