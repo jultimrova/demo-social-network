@@ -33,7 +33,8 @@ const Users = (props) => {
                     </div>
                     <div>
                         {user.subscribe
-                            ? <button onClick={() => {
+                            ? <button disabled={props.subscribeInProgress.some(id => id === user.id)} onClick={() => {
+                                props.toggleSubscribeInProgress(true, user.id);
                                 axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
                                     withCredentials: true,
                                     headers: {
@@ -44,10 +45,12 @@ const Users = (props) => {
                                         if (response.data.resultCode === 0) {
                                             props.unsubscribe(user.id);
                                         }
+                                        props.toggleSubscribeInProgress(false, user.id);
                                     });
 
                             }}>Unsubscribe</button>
-                            : <button onClick={() => {
+                            : <button disabled={props.subscribeInProgress.some(id => id === user.id)} onClick={() => {
+                                props.toggleSubscribeInProgress(true, user.id);
                                 axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
                                     withCredentials: true,
                                     headers: {
@@ -58,6 +61,7 @@ const Users = (props) => {
                                         if (response.data.resultCode === 0) {
                                             props.subscribe(user.id);
                                         }
+                                        props.toggleSubscribeInProgress(false, user.id);
                                     });
 
                             }}>Subscribe</button>
