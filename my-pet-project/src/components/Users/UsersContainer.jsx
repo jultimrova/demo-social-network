@@ -9,6 +9,7 @@ import {
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
+import {Redirect} from "react-router-dom";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
@@ -43,7 +44,7 @@ export const mapStateToProps = (state) => {
         pageSize: state.usersPage.pageSize,
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
-        followInProgress: state.usersPage.followInProgress,
+        followInProgress: state.usersPage.followInProgress
     }
 }
 
