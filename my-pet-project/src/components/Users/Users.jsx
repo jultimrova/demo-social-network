@@ -1,8 +1,7 @@
 import React from 'react';
-import s from './Users.module.css';
+import s from './Users.module.css'
 import usersPhoto from '../../assets/images/usersPhoto.jpg'
 import {NavLink} from 'react-router-dom';
-import * as axios from 'axios';
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -17,56 +16,29 @@ const Users = (props) => {
             <div className={s.paginator}>
                 {pages.map(page => {
                     return <span className={props.currentPage === page && s.selectedPage}
-                                 onClick={() => {
-                                     props.onPageChanged(page)
-                                 }}>{page}</span>
+                                 onClick={() => {props.onPageChanged(page)}}>{page}</span>
                 })}
-
             </div>
             {props.users.map(user => <div key={user.id}>
                 <span>
                     <div>
                         <NavLink to={'/profile/' + user.id}>
-                        <img className={s.usersPhoto} src={user.photos.small != null ? user.photos.small : usersPhoto}
-                             alt='userPhoto'/>
+                        <img className={s.usersPhoto}
+                             src={user.photos.small != null ? user.photos.small : usersPhoto}
+                             alt='usersPhoto'/>
                         </NavLink>
                     </div>
                     <div>
-                        {user.subscribe
-                            ? <button disabled={props.subscribeInProgress.some(id => id === user.id)} onClick={() => {
-                                props.toggleSubscribeInProgress(true, user.id);
-                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-                                    withCredentials: true,
-                                    headers: {
-                                        'API-KEY': '2f622bb4-7235-4fc9-b85b-75b00ff9e5b9'
-                                    }
-                                })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.unsubscribe(user.id);
-                                        }
-                                        props.toggleSubscribeInProgress(false, user.id);
-                                    });
-
-                            }}>Unsubscribe</button>
-                            : <button disabled={props.subscribeInProgress.some(id => id === user.id)} onClick={() => {
-                                props.toggleSubscribeInProgress(true, user.id);
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
-                                    withCredentials: true,
-                                    headers: {
-                                        'API-KEY': '2f622bb4-7235-4fc9-b85b-75b00ff9e5b9'
-                                    }
-                                })
-                                    .then(response => {
-                                        if (response.data.resultCode === 0) {
-                                            props.subscribe(user.id);
-                                        }
-                                        props.toggleSubscribeInProgress(false, user.id);
-                                    });
-
-                            }}>Subscribe</button>
+                        {user.followed
+                            ? <button disabled={props.followInProgress
+                                .some(id => id === user.id)}
+                                      onClick={() => {props.unfollow(user.id)}}>
+                                Unsubscribe</button>
+                            : <button disabled={props.followInProgress
+                                .some(id => id === user.id)}
+                                      onClick={() => {props.follow(user.id)}}>
+                                Subscribe</button>
                         }
-
                     </div>
                 </span>
                 <span>
