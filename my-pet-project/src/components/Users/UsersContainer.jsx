@@ -9,7 +9,6 @@ import {
 } from '../../redux/users-reducer';
 import Users from './Users';
 import Preloader from '../../common/Preloader/Preloader';
-import {Redirect} from "react-router-dom";
 
 class UsersContainer extends React.Component {
     componentDidMount() {
