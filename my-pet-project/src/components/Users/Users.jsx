@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Users.module.css'
 import usersPhoto from '../../assets/images/usersPhoto.jpg'
-import {NavLink, Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -10,7 +10,7 @@ const Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    if (props.isAuth === false) return <Redirect to={'/login'} />
+
     return (
         <div className={s.usersContainer}>
             <div className={s.paginator}>
