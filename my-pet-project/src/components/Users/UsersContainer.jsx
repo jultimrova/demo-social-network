@@ -8,7 +8,7 @@ import {
     follow
 } from '../../redux/users-reducer';
 import Users from './Users';
-import Preloader from '../../common/Preloader/Preloader';
+import Preloader from '../common/Preloader/Preloader';
 
 class UsersContainer extends React.Component {
     componentDidMount() {
