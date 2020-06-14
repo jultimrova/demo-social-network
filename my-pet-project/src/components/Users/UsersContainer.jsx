@@ -48,10 +48,5 @@ export const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setCurrentPage,
-    toggleFollowInProgress,
-    getUsers
-})(UsersContainer);
+export default connect(mapStateToProps,
+    {follow, unfollow, setCurrentPage, toggleFollowInProgress, getUsers})(UsersContainer);
