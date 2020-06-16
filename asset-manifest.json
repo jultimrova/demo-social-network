@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/social-network/my-pet-project/static/css/main.4fad8fb4.chunk.css",
-    "main.js": "/social-network/my-pet-project/static/js/main.f27dce12.chunk.js",
-    "main.js.map": "/social-network/my-pet-project/static/js/main.f27dce12.chunk.js.map",
+    "main.js": "/social-network/my-pet-project/static/js/main.d5a010a6.chunk.js",
+    "main.js.map": "/social-network/my-pet-project/static/js/main.d5a010a6.chunk.js.map",
     "runtime-main.js": "/social-network/my-pet-project/static/js/runtime-main.9a52e90e.js",
     "runtime-main.js.map": "/social-network/my-pet-project/static/js/runtime-main.9a52e90e.js.map",
-    "static/js/2.bbc0620f.chunk.js": "/social-network/my-pet-project/static/js/2.bbc0620f.chunk.js",
-    "static/js/2.bbc0620f.chunk.js.map": "/social-network/my-pet-project/static/js/2.bbc0620f.chunk.js.map",
+    "static/js/2.af92aab3.chunk.js": "/social-network/my-pet-project/static/js/2.af92aab3.chunk.js",
+    "static/js/2.af92aab3.chunk.js.map": "/social-network/my-pet-project/static/js/2.af92aab3.chunk.js.map",
     "index.html": "/social-network/my-pet-project/index.html",
-    "precache-manifest.d0f7ea6de854ce9e124e1f5ce18203e2.js": "/social-network/my-pet-project/precache-manifest.d0f7ea6de854ce9e124e1f5ce18203e2.js",
+    "precache-manifest.6cd176995f08efacb57bca5cb2fdaf9e.js": "/social-network/my-pet-project/precache-manifest.6cd176995f08efacb57bca5cb2fdaf9e.js",
     "service-worker.js": "/social-network/my-pet-project/service-worker.js",
     "static/css/main.4fad8fb4.chunk.css.map": "/social-network/my-pet-project/static/css/main.4fad8fb4.chunk.css.map",
-    "static/js/2.bbc0620f.chunk.js.LICENSE.txt": "/social-network/my-pet-project/static/js/2.bbc0620f.chunk.js.LICENSE.txt",
+    "static/js/2.af92aab3.chunk.js.LICENSE.txt": "/social-network/my-pet-project/static/js/2.af92aab3.chunk.js.LICENSE.txt",
     "static/media/preloader.svg": "/social-network/my-pet-project/static/media/preloader.46c9430b.svg",
     "static/media/usersPhoto.jpg": "/social-network/my-pet-project/static/media/usersPhoto.5d3f3632.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.9a52e90e.js",
-    "static/js/2.bbc0620f.chunk.js",
+    "static/js/2.af92aab3.chunk.js",
     "static/css/main.4fad8fb4.chunk.css",
-    "static/js/main.f27dce12.chunk.js"
+    "static/js/main.d5a010a6.chunk.js"
   ]
 }
