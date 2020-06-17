@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, withRouter} from "react-router-dom";
 import './App.css';
 import Sidebar from "./components/Sidebar/Sidebar";
 import News from "./components/News/News";
@@ -10,10 +10,11 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import store from "./redux/redux-store";
 
 class App extends React.Component {
     componentDidMount() {
@@ -54,6 +55,18 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default compose(
+const AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initializeApp}))(App);
+
+const SocialNetworkApp = (props) => {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </BrowserRouter>
+    )
+}
+
+export default SocialNetworkApp;

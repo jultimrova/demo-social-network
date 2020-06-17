@@ -40,7 +40,7 @@ class ProfileStatus extends React.Component {
             <div className={s.profileInfoContainer}>
                 {!this.state.editMode &&
                     <div>
-                        <span onClick={this.activateEditMode}>{this.props.status || '--no status--'}</span>
+                        <span onDoubleClick={this.activateEditMode}>{this.props.status || '--no status--'}</span>
                     </div>
                 }
                 {this.state.editMode &&
