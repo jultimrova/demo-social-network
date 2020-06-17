@@ -1,0 +1,8 @@
+.paginator span {
+    padding: 3px;
+    cursor: pointer;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
