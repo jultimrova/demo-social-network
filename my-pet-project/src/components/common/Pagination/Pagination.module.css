@@ -1,8 +1,27 @@
-.paginator span {
-    padding: 3px;
-    cursor: pointer;
+.paginator {
+    margin: 10px 0;
 }
 
-.selectedPage {
+.paginator span {
+    cursor: pointer;
+    background-color: whitesmoke;
+}
+
+.paginator button {
+    padding: 5px;
+    background-color: gainsboro;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.pageNumber {
+    margin: 5px 5px;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.pageNumber.selectedPage {
     font-weight: bold;
+    border-color: black;
 }
